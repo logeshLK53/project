@@ -1,0 +1,35 @@
+
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+      <div class="row container d-flex justify-content-center">
+        <div class="col-lg-8 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Orders</h4>
+              <div class="table-responsive">
+                <table  class="table">
+                  <tr>
+                    <td>Order Id</td>
+                    <td>Ordered Date</td>
+                    <td>Order Status</td>
+                    <td>Address</td>
+                    <td>Product</td>
+                  </tr>
+                  <tr *ngFor="let order of allOrder;">
+                    <td #inp>{{ order.orderId }}</td>
+                    <td>{{ order.orderDate | date: "shortDate" }}</td>
+                    <td>{{ order.orderStatus }}</td>
+                    <td>{{ order.address.city }}</td>
+                    <td>{{ order.product.productName }}</td>
+                  </tr>
+                </table>
+                <div class="form-group">
+                <button type="submit" class="button" routerLink="../confirmorder">Confirm Order</button>
+            </div>  
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
