@@ -2,27 +2,28 @@ package com.zensar.bean;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import javax.persistence.Transient;
 @Embeddable
 public class Product {
 
 	@Column(name = "product_id")
 	int productId;
-	@Transient
+	@Column
 	private String productName;
-	@Transient
+	@Column
 	private double price;
-	@Transient
+	@Column
 	private String color;
-	@Transient
+	@Column
 	private String dimension;
-	@Transient
+	@Column
 	private String specification;
-	@Transient
+	@Column
 	private String manufacturer;
-	@Transient
-	private int quantity;
-	@Transient
+	//@Column
+	//private int quantity;
+	@Embedded
 	private Category category;
 	public int getProductId() {
 		return productId;
@@ -66,12 +67,12 @@ public class Product {
 	public void setManufacturer(String manufacturer) {
 		this.manufacturer = manufacturer;
 	}
-	public int getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
+//	public int getQuantity() {
+//		return quantity;
+//	}
+//	public void setQuantity(int quantity) {
+//		this.quantity = quantity;
+//	}
 	public Category getCategory() {
 		return category;
 	}
@@ -82,6 +83,6 @@ public class Product {
 	public String toString() {
 		return "Product [productId=" + productId + ", productName=" + productName + ", price=" + price + ", color="
 				+ color + ", dimension=" + dimension + ", specification=" + specification + ", manufacturer="
-				+ manufacturer + ", quantity=" + quantity + ", category=" + category + "]";
+				+ manufacturer  + ", category=" + category + "]";
 	}	
 }
