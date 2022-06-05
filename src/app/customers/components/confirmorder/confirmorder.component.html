@@ -1,0 +1,96 @@
+
+<div class="page-content page-container" id="page-content">
+  <div class="padding">
+    <div class="row container d-flex justify-content-center">
+      <div class="col-lg-8 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Orders</h4>
+            <div class="table-responsive">
+              <div id="accordion">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <div>
+                      <details close>
+                        <summary>Delivery Address</summary>
+                        <div>
+                        <form>
+                        <table>
+                          <tr>
+                            <td ><input type="checkbox"></td>
+                            <td>{{ address.streetNo}},</td>
+                            <td>{{ address.buildingName}},</td>
+                            <td>{{ address.city}},</td>
+                            <td>{{ address.state}},</td>
+                            <td>{{ address.pincode}}</td>
+                            <br>
+                            </tr>
+                        </table>
+                        </form>
+                        </div>
+                      </details>
+                      <details>
+                        <summary>
+                         Order Details
+                        </summary>
+                        <div>
+                          <table  class="table">
+                            <tr>
+                              <td>Product name</td>
+                              <td>Price</td>
+                              <td>Color</td>
+                              <td>Specification</td>
+                              <td>Quantity</td>
+                            </tr>
+                            <tr *ngFor="let order of allOrder">
+                              <td>{{ order.product.productName }}</td>
+                              <td>{{ order.product.price }}</td>
+                              <td>{{ order.product.color }}</td>
+                              <td>{{ order.product.specification }}</td>
+                              <td>{{ order.quantity }}</td>
+                            </tr>
+                          </table>
+                          <table>
+                            <tr>
+                              <td><label for="">Total Price</label></td>
+                              <td>{{totalPrice}}</td>
+                            </tr>
+                          </table>
+
+                        </div>
+                      </details>
+                      <details>
+                        <summary>
+                          Place Order
+                        </summary>
+                        <div>
+                          <table>
+                            <tr>
+                              <td><label for="">Card Number</label></td>
+                              <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                              <td><label for="">Name on Card</label></td>
+                              <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                              <td><label for="">CVV</label></td>
+                              <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                              <td colspan="2"><button type="submit" (click)="placeOrder()">Confirm Payment</button></td>
+                            </tr>
+                        </table>
+                        </div>
+                      </details>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

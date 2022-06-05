@@ -10,10 +10,15 @@ import { IProducts } from './Products';
 export class ApiService {
 
   private url:string="http://localhost:5003/product/products";
+  private url1:string="http://localhost:5003/product/add"
   constructor(private http :HttpClient) { }
 
   getDataFromServer():Observable<IProducts[]>{
     return this.http.get<IProducts[]>(this.url);
+  }
+
+  public addDataToServer(data: any): Observable<IProducts> {
+    return this.http.post<IProducts>(this.url1, data);
   }
 
   /*getProduct(){

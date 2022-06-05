@@ -1,0 +1,17 @@
+.bckimg{
+    background-image: url(src\assets\pics\shopping-statistics.png);
+    height: 100vh;
+    width:100%;
+}
+  
+ 
+  .container {
+      opacity: 0.8;
+    position: center;
+    right: 10;
+    max-width: 600px;
+    padding: 16px;
+    left: 25%;
+  }
+  
+  

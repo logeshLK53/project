@@ -1,0 +1,17 @@
+<div class="container" >
+    <div class="">
+    <div class="row" style="background-image:  url('src\assets\pics\lk.jpg');">
+        <ng-container *ngFor ="let item of productList">
+            <div class="card col-md-3">
+            <h5>{{item.productName}}</h5>
+            <p><strong>Price</strong> {{item.price}}</p> 
+            <p><strong>Brand  :</strong> {{item. manufacturer}}</p>
+            <div class="inline"> 
+        
+            <button class="btn btn-primary" (click)="addtocart(item.productId)" >Add To Cart</button>
+            </div>
+        </div>
+        </ng-container>
+    </div>
+</div>
+</div>

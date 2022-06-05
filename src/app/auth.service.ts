@@ -26,10 +26,14 @@ export class AuthService {
     this.router.navigate(['login']);
   }
 
-  login({ email, password }: any): Observable<any> {
-    if (email === 'vk@gmail.com' && password === 'vk@123') {
+  login({ role ,email, password }: any): Observable<any> {
+    if (role== 2 &&email == 'vk@gmail.com' && password == 'vk@123') {
       this.setToken('abcdefghijklmnopqrstuvwxyz');
-      return of({ name: 'virat kholi', email: 'vk@gmail.com' });
+      return of({role :2, name: 'virat kholi', email: 'vk@gmail.com' });
+    }
+    else if (role== 1 &&email == 'admin@gmail.com' && password == 'admin@123') {
+      this.setToken('abcdefghijklmnopqrstuvwxyz');
+      return of({role :1 ,name: 'Admin', email: 'admin@gmail.com' });
     }
     return throwError(new Error('Failed to login'));
   }
