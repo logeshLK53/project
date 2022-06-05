@@ -1,0 +1,38 @@
+<div class="container vh-100">
+    <div class="row justify-content-center h-100">
+        <div class="card my-auto shadow">
+            <div class="card-body px-3">
+                <div class="text-center">
+                  
+                </div>
+                <div class="text-center">
+                    <h2>Welcome</h2>
+                </div>
+                <p style="color: lightslategray; text-align: center;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please enter your login
+                    details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="from-group">
+                        <label for="user">Login as</label>&nbsp;&nbsp;
+                        <select class="form-control inputstl" formControlName="role">
+                            <option value="1" selected>Admin</option>
+                            <option value="2">Customer</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email" class="form-control" formControlName="email"
+                            name="email" />
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="password" id="password" placeholder="Password" class="form-control"
+                            formControlName="password" name="password" />
+                    </div>
+                    <br>
+                    <input type="submit" class="btn btn-primary w-100" value="Login" name="">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
